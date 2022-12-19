@@ -1,7 +1,7 @@
 ﻿#include <fstream>
 #include<iostream>
 using namespace std;
-int main()
+inline int tablelist()
 {
 	setlocale(LC_ALL, "rus");
 	int number, number_weak, number_gr;// объявление переменных (номер лня недели, номер недели, номер группы)
@@ -183,4 +183,5 @@ int main()
 		}
 		break; }
 	}
+	return 0;
 }

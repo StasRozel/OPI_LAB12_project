@@ -4,7 +4,7 @@
 using namespace std;
 
 //Функция сравнения строк
-void string_comparison(string first_str, string second_str)
+inline void string_comparison(string first_str, string second_str)
 {
 	if (first_str.length() == second_str.length())
 	{
@@ -21,7 +21,7 @@ void string_comparison(string first_str, string second_str)
 }
 
 //Функция поиска подстроки в строке
-int substring_search(string str, string substr)
+inline int substring_search(string str, string substr)
 {
 	int check;
 
@@ -30,7 +30,7 @@ int substring_search(string str, string substr)
 	return check;
 }
 
-int main()
+inline int string_calculator()
 {
 	setlocale(LC_ALL, "rus");
 
@@ -45,7 +45,20 @@ int main()
 	cout << "Введите вторую строку" << endl;
 	getline(cin, second_str);
 
-	string_comparison(first_str, second_str);
+	if (first_str.length() == second_str.length())
+	{
+		cout << "Строки равны" << endl;
+	}
+	else if (first_str.length() > second_str.length())
+	{
+		cout << "Первая строка больше второй" << endl;
+	}
+	else
+	{
+		cout << "Вторая строка больше первой" << endl;
+	}
+
+	//string_comparison(first_str, second_str);
 
 	//2. Поиск подстроки в строке
 
@@ -119,5 +132,6 @@ int main()
 
 	cout << "Количество гласных в строке " << counter;
 
+	return 0;
 	/*Всё вельми крута!*/
 }
