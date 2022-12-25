@@ -1,13 +1,13 @@
 ﻿#include <fstream>
 #include<iostream>
 using namespace std;
-inline int tablelist()
+int main()
 {
 	setlocale(LC_ALL, "rus");
 	int number, number_weak, number_gr;// объявление переменных (номер лня недели, номер недели, номер группы)
 	cout << "Введите номер подгруппы" << endl;// вывод(Введите номер подгруппы)
 	cin >> number_gr;// Ввод номера группы
-	if (number_gr > 2) {// Вывод ошибки при вводе числа больше 2
+	if (number_gr > 2 ) {// Вывод ошибки при вводе числа больше 2
 
 		cout << "Вы ввели некоректное значение";
 	}
@@ -15,7 +15,7 @@ inline int tablelist()
 	case 1: { // Вычисление дня недели при вводе 1 группы
 		cout << "Введите номер недели" << endl;
 		cin >> number_weak;// Ввод номера недели 1 или 2
-		if (number_weak == 1) { // Проверка реальности введённых данных
+		if (number_weak == 1 || number_weak % 2 !=0) { // Проверка реальности введённых данных
 			cout << "Введите номер дня недели" << endl;
 			cin >> number;//Ввод номера дня недели
 			if (number < 7) { // Проверка на реальность введённых данных
@@ -25,7 +25,7 @@ inline int tablelist()
 					cout << "18:05-19:25| лк Компрьютерные языки разметки" << endl; break; }
 				case 2: {
 					cout << "18:05-19:25| лк Основы программной инженерии" << endl;
-					cout << "19:40-21:00| лк ВоВ советской нации" << endl; break; }
+					cout << "19:40-21:00| лк ВОВ советского народа" << endl; break; }
 				case 3: {
 					cout << "14:40-16:00| лр Основы программной инженерии" << endl;
 					cout << "16:30-17:50| лр Компьютеные языки разметки" << endl;
@@ -46,14 +46,16 @@ inline int tablelist()
 					cout << "14:40-16:00| лк Математический анализ" << endl;
 					cout << "16:30-17:50| пз Английский язык" << endl; break; }
 				}
+				break;
 			}
 			else { // Вывод при неверном вводе
 				cout << "Введен неверный номер дня недели" << endl;
 				return 0;
 			}
+			break;
 		}
 		else {
-			if (number_weak == 2) { // Проверка в случае введении второй недели
+			if (number_weak == 2 || number_weak % 2 == 0) { // Проверка в случае введении второй недели
 				cout << "Введите номер дня недели" << endl;
 				cin >> number;
 				if (number < 7) {
@@ -100,7 +102,7 @@ inline int tablelist()
 	case 2: { // Вычисление дня недели при вводе 2 недели
 		cout << "Введите номер недели" << endl;
 		cin >> number_weak;
-		if (number_weak == 1) {
+		if (number_weak == 1 || number_weak % 2 != 0) {
 			cout << "Введите номер дня недели" << endl;
 			cin >> number;
 			if (number < 7) {
@@ -112,7 +114,7 @@ inline int tablelist()
 				case 2: {
 					cout << "16:30-17:50| лб Основы алгоритмизации и программирования" << endl;
 					cout << "18:05-19:25| лк Основы программной инженерии" << endl;
-					cout << "19:40-21:00| лк ВоВ советской нации" << endl; break; }
+					cout << "19:40-21:00| лк ВОВ советского народа" << endl; break; }
 				case 3: {
 					cout << "14:40-16:00| лб Компрьютерные языки разметки" << endl;
 					cout << "16:30-17:50| пз Английский язык" << endl;
@@ -131,14 +133,16 @@ inline int tablelist()
 					cout << "13:00-14:20 пз Математический анализ" << endl;
 					cout << "14:40-16:00 лк Математический анализ" << endl; break; }
 				}
+				break;
 			}
 			else {
 				cout << "Введён неверный номер дня недели" << endl;
 				return 0;
 			}
+			break;
 		}
 		else {
-			if (number_weak == 2) {
+			if (number_weak == 2 || number_weak % 2 == 0) {
 				{ cout << "Введите номер дня недели" << endl;
 				cin >> number;
 				if (number < 7) {
@@ -166,7 +170,7 @@ inline int tablelist()
 						cout << "19:40-21:00| пз Английский язык" << endl; break; }
 
 					case 6: {
-						cout << "13:00-14:20| пз Математический анализs" << endl;
+						cout << "13:00-14:20| пз Математический анализ" << endl;
 						cout << "14:40-16:00| лк Математический анализ" << endl; break; }
 					}
 				}
@@ -183,5 +187,4 @@ inline int tablelist()
 		}
 		break; }
 	}
-	return 0;
 }
